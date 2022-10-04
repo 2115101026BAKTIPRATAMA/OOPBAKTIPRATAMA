@@ -16,11 +16,25 @@ public class Hiro extends Actor
     {
         // Add your action code here.
         
-        move(2);
-        if (isAtEdge())
-           setLocation(0,getY());
+        //move(2);
+        //if (isAtEdge())
+           //setLocation(0,getY());
+           gerak();
         
+    }
+    public void gerak()
+    {
+        if(Greenfoot.isKeyDown("w"))
+        setLocation(getX(),getY()-2);
         
+        if(Greenfoot.isKeyDown("s"))
+        setLocation(getX(),getY()+2);
+        
+        if(Greenfoot.isKeyDown("d"))
+        setLocation(getX()+5,getY());
+        
+        if(Greenfoot.isKeyDown("a"))
+        setLocation(getX()-5,getY());
     }
     
      

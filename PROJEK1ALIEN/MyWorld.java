@@ -29,9 +29,12 @@ public class MyWorld extends World
     {
         Hiro hiro = new Hiro();
         addObject(hiro,54,281);
-        Hiro bakti3 = new Hiro();
-        addObject(bakti3,100,211);
+
+        hiro.setLocation(112,147);
+        Alien alien = new Alien();
+        addObject(alien,381,146);
 
     }
+    
     
 }

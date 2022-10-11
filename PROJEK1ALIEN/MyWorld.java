@@ -19,6 +19,7 @@ public class MyWorld extends World
         super(600, 400, 1);
         
         prepare();
+       
     }
     
     /**
@@ -31,10 +32,31 @@ public class MyWorld extends World
         addObject(hiro,54,281);
 
         hiro.setLocation(112,147);
-        Alien alien = new Alien();
-        addObject(alien,381,146);
+        //Alien alien = new Alien();
+        //addObject(new Alien() , Greenfoot.getRandomNumber(595),Greenfoot.getRandomNumber(595));
+        //addObject(alien,43,547);
+        
 
     }
+    //public void act(){
+     // if(Greenfoot.getRandomNumber(400)<1){
+     //   addObject(new Alien(),1,Greenfoot.getRandomNumber(1000));
+       // }
+   // }
     
+    public void act(){
+        spwanEnemy();
+    }
+    public int timerAlien = 0;
+    public void spwanEnemy(){
+        if(timerAlien==180){
+            int speed = Greenfoot.getRandomNumber(4) + 1;
+            addObject(new Alien(),599,Greenfoot.getRandomNumber(400));
+            timerAlien = 0;
+            
+        }else{
+            timerAlien++;
+        }
+    }
     
 }

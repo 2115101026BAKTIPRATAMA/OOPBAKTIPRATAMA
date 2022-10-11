@@ -16,6 +16,7 @@ public class Alien extends Actor
      */
     public Alien (){
         setRotation(180);
+        //getWorld().addObject(new Alien() , Greenfoot.getRandomNumber(595),1);
     }
     
     public Alien (int speed){
@@ -28,9 +29,17 @@ public class Alien extends Actor
     public void act()
     {
         // Add your action code here.
-        move(speed);
+        //move(speed);
+        //setLocation(getX()-1,getY());
+        move(2);
+        if(isAtEdge()){
+            getWorld().removeObject(this);
+            //   setLocation(595,Greenfoot.getRandomNumber(getWorld().getWidth()));
+        }
         
     }
+    
+    
     
     
 }

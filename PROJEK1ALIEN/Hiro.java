@@ -19,8 +19,8 @@ public class Hiro extends Actor
         //move(2);
         //if (isAtEdge())
            //setLocation(0,getY());
-           gerak();
-        
+        gerak();
+        shootLayer();
     }
     public void gerak()
     {
@@ -36,6 +36,15 @@ public class Hiro extends Actor
         if(Greenfoot.isKeyDown("a"))
         setLocation(getX()-5,getY());
     }
-    
+     int laserTimer = 0;
+     public void shootLayer(){
+         if(laserTimer == 30){
+             getWorld(). addObject(new Laser(),getX()+10,getY());
+              laserTimer = 0;
+            
+         }else{
+             laserTimer++;
+            }
+     }
      
 }

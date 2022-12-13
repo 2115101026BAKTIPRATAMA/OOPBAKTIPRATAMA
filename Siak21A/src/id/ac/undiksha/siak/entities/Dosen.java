@@ -1,38 +1,77 @@
 package id.ac.undiksha.siak.entities;
 
-public class Dosen {
-	private String Nama;
-	private String Alamat;
+public class Dosen  extends Manusia{
 	private String Nip;
-	private boolean Jenis_Kelamin;//0 => perempuan 1=>laki-laki
+//	private String Nama;
+//	private String Alamat;
+//	private boolean Jenis_Kelamin;//0 => perempuan 1=>laki-laki
 	private String prodi;
 	private String jurusan;
 	private String fakultas;
 	
-	public String getNama() {
-		return Nama;
+//	public Dosen(String Nip,String nama, String alamat,boolean jenis_Kelamin, String prodi, String jurusan,
+//			String fakultas) {
+//		super();
+//		this.Nip = Nip;
+//		this.Nama = nama;
+//		this.Alamat = alamat;
+//		this.Jenis_Kelamin = jenis_Kelamin;
+//		this.prodi = prodi;
+//		this.jurusan = jurusan;
+//		this.fakultas = fakultas;
+//	}
+	
+	public Dosen() {
+		super();
+		 this.setNip("(belum diisi)");
+		 this.setProdi("(belum diisi)");
+		 this.setJurusan("(belum diisi)");
+		 this.setFakultas("(belum diisi)");
 	}
-	public void setNama(String nama) {
-		Nama = nama;
+	
+	
+	
+	public void printlnAllinfo() {
+		System.out.println("Nip = " + this.getNip());
+		System.out.println("Nama = " + this.getNama());
+		System.out.println("Alamat = " + this.getAlamat());
+		System.out.println("Jenis_kelamin = "
+				+ (this.isJenis_Kelamin() ? "laki-laki" : "perempuan"));
+		System.out.println("Prodi = " + this.getProdi());
+		System.out.println("Jurusan= " + this.getJurusan());
+		System.out.println("Fakultas= " + this.getFakultas());
+		
 	}
-	public String getAlamat() {
-		return Alamat;
+	
+	
+
+	
+	
+	
+	public Dosen(String nama, String alamat, boolean jenis_Kelamin) {
+		super(nama, alamat, jenis_Kelamin);
 	}
-	public void setAlamat(String alamat) {
-		Alamat = alamat;
+
+
+
+	public Dosen(String nama, String alamat, boolean jenis_Kelamin,String nip, String prodi, String jurusan, String fakultas) {
+		
+		super(nama, alamat, jenis_Kelamin);
+		Nip = nip;
+		this.prodi = prodi;
+		this.jurusan = jurusan;
+		this.fakultas = fakultas;
 	}
+
+
+
 	public String getNip() {
 		return Nip;
 	}
 	public void setNip(String nip) {
 		Nip = nip;
 	}
-	public boolean isJenis_Kelamin() {
-		return Jenis_Kelamin;
-	}
-	public void setJenis_Kelamin(boolean jenis_Kelamin) {
-		Jenis_Kelamin = jenis_Kelamin;
-	}
+	
 	public String getProdi() {
 		return prodi;
 	}

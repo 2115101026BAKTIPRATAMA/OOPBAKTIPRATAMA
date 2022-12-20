@@ -31,7 +31,6 @@ public class Pegawai {
 				+ (Jenis_Kelamin ? "laki-laki" : "perempuan"));		
 
 		
-		
 	}
 	
 	public String getIDP() {

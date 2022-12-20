@@ -44,9 +44,6 @@ public class Dosen  extends Manusia{
 	}
 	
 	
-
-	
-	
 	
 	public Dosen(String nama, String alamat, boolean jenis_Kelamin) {
 		super(nama, alamat, jenis_Kelamin);

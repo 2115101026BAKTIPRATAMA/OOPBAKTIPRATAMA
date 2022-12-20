@@ -1,44 +1,51 @@
 package id.ac.undiksha.siak.entities;
 
+import id.ac.undiksha.organisasi.Fakultas;
+import id.ac.undiksha.organisasi.Prodi;
+
 public class Mahasiswa extends Manusia{
 	private String NIM;
-//	private String Nama;
-//	private String Alamat;
-//	private boolean Jenis_Kelamin;//0 => perempuan 1=>laki-laki
-	private String prodi;
-	private String jurusan;
-	private String fakultas;
+	public Prodi prodi;
+	public Fakultas Fakultas;
+	
+//	private String prodi;
+//	private String jurusan;
+//	private String fakultas;
 
 	
 	public Mahasiswa() {
 		super();
+		prodi = new Prodi();
+		Fakultas = new Fakultas();
 		 this.setNIM("(belum diisi)");
-		 this.setProdi("(belum diisi)");
-		 this.setJurusan("(belum diisi)");
-		 this.setFakultas("(belum diisi)");
+		 
+		 
+//		 this.setProdi("(belum diisi)");
+//		 this.setJurusan("(belum diisi)");
+//		 this.setFakultas("(belum diisi)");
 	}
-//	
-//	public Mahasiswa(String NIM,String nama, String alamat, boolean jenis_Kelamin, String prodi, String jurusan,
-//			String fakultas) {
-//		super();
-//		this.NIM = NIM;
-//		this.Nama = nama;
-//		this.Alamat = alamat;
-//		this.Jenis_Kelamin = jenis_Kelamin;
-//		this.prodi = prodi;
-//		this.jurusan = jurusan;
-//		this.fakultas = fakultas;
-//	}
-//
+
+
+	
+
 	public void printlnAllinfo() {
 		System.out.println("NIM = " + this.getNIM());
 		System.out.println("Nama = " + this.getNama());
 		System.out.println("Alamat = " + this.getAlamat());
 		System.out.println("Jenis_kelamin = "
-				+ (this.isJenis_Kelamin() ? "laki-laki" : "perempuan"));		
-		System.out.println("Prodi = " + this.getProdi());
-		System.out.println("Jurusan= " + this.getJurusan());
-		System.out.println("Fakultas= " + this.getFakultas());
+				+ (this.isJenis_Kelamin() ? "laki-laki" : "perempuan"));	
+		
+		System.out.println("Kode Prodi = " + this.getProdi().getKodeprodi());
+		System.out.println("Nama Prodi = " + this.getProdi().getNamaprodi());
+		
+		System.out.println("Kode Jurusan = " + this.getProdi().getKodeJurusan());
+		System.out.println("Nama Jurusan = " + this.getProdi().getNamaJurusan());
+		
+		System.out.println("Kode Fakultas = " + this.getFakultas().getKodeFakultas());
+		System.out.println("Nama Fakultas = " + this.getFakultas().getNamaFakultas());
+		System.out.println("Email Fakultas = " + this.getFakultas().getEmailFakultas());
+		
+
 		
 		
 	}
@@ -50,17 +57,37 @@ public class Mahasiswa extends Manusia{
 	}
 	
 	
-	public Mahasiswa(String nama, String alamat, boolean jenis_Kelamin, String nIM, String prodi, String jurusan, String fakultas) {
+	public Mahasiswa(String nama, String alamat, boolean jenis_Kelamin, String nIM, String kodeprodi, String namaprodi,String KodeJurusan,String NamaJurusan,String NamaFakultas,String KodeFakultas,String EmailFakultas) {
 		
 	super(nama, alamat, jenis_Kelamin);
-	NIM = nIM;
-	this.prodi = prodi;
-	this.jurusan = jurusan;
-	this.fakultas = fakultas;
+	prodi = new Prodi(kodeprodi, namaprodi , KodeJurusan ,NamaJurusan);
+	Fakultas = new Fakultas(NamaFakultas,KodeFakultas,EmailFakultas);
+	NIM = nIM; 
+//	this.prodi = prodi;
+//	this.jurusan = jurusan;
+//	this.fakultas = fakultas;
 }
 	
+	public Fakultas getFakultas() {
+		return Fakultas;
+	}
+
+
+	public void setFakultas(Fakultas fakultas) {
+		Fakultas = fakultas;
+	}
 
 	
+	public Prodi getProdi() {
+		return prodi;
+	}
+
+
+	public void setProdi(Prodi prodi) {
+		this.prodi = prodi;
+	}
+
+
 	public String getNIM() {
 		return NIM;
 	}
@@ -71,34 +98,34 @@ public class Mahasiswa extends Manusia{
 	}
 
 
-	public String getProdi() {
-		return prodi;
-	}
-
-
-	public void setProdi(String prodi) {
-		this.prodi = prodi;
-	}
-
-
-	public String getJurusan() {
-		return jurusan;
-	}
-
-
-	public void setJurusan(String jurusan) {
-		this.jurusan = jurusan;
-	}
-
-
-	public String getFakultas() {
-		return fakultas;
-	}
-
-
-	public void setFakultas(String fakultas) {
-		this.fakultas = fakultas;
-	}
+//	public String getProdi() {
+//		return prodi;
+//	}
+//
+//
+//	public void setProdi(String prodi) {
+//		this.prodi = prodi;
+//	}
+//
+//
+//	public String getJurusan() {
+//		return jurusan;
+//	}
+//
+//
+//	public void setJurusan(String jurusan) {
+//		this.jurusan = jurusan;
+//	}
+//
+//
+//	public String getFakultas() {
+//		return fakultas;
+//	}
+//
+//
+//	public void setFakultas(String fakultas) {
+//		this.fakultas = fakultas;
+//	}
 	
 	
 	

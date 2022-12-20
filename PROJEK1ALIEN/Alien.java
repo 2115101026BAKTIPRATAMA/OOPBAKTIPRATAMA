@@ -24,23 +24,26 @@ public class Alien extends Actor
         this.speed=speed;
     }
     
-    public int speed = 2;
+    public int speed = 3;
     
     public void act()
     {
-        // Add your action code here.
-        //move(speed);
-        //setLocation(getX()-1,getY());
-        move(2);
-        if(isAtEdge()){
-            getWorld().removeObject(this);
-            //   setLocation(595,Greenfoot.getRandomNumber(getWorld().getWidth()));
-        }
-        
+        alienmove();
+    
     }
     
+    protected void alienmove(){
+         move(speed);
+        if(isAtEdge()){
+            getWorld().removeObject(this);
+        }
+    }
+
+    }
+  
+    
+  
     
     
-    
-}
+
 

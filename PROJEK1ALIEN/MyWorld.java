@@ -35,8 +35,9 @@ public class MyWorld extends World
         //Alien alien = new Alien();
         //addObject(new Alien() , Greenfoot.getRandomNumber(595),Greenfoot.getRandomNumber(595));
         //addObject(alien,43,547);
-        
 
+        Alien2 alien2 = new Alien2();
+        addObject(alien2,532,160);
     }
     //public void act(){
      // if(Greenfoot.getRandomNumber(400)<1){
@@ -46,12 +47,25 @@ public class MyWorld extends World
     
     public void act(){
         spwanEnemy();
+        spwanEnemy2();
     }
-    public int timerAlien = 0;
-    public void spwanEnemy(){
+    private  int timerAlien = 0;
+    
+    private  void spwanEnemy(){
         if(timerAlien==180){
             int speed = Greenfoot.getRandomNumber(4) + 1;
             addObject(new Alien(),599,Greenfoot.getRandomNumber(400));
+            timerAlien = 0;
+            
+        }else{
+            timerAlien++;
+        }
+    }
+    
+        private  void spwanEnemy2(){
+        if(timerAlien==180){
+            int speed = Greenfoot.getRandomNumber(4) + 2;
+            addObject(new Alien2(),599,Greenfoot.getRandomNumber(400));
             timerAlien = 0;
             
         }else{

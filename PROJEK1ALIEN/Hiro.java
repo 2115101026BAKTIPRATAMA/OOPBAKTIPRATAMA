@@ -21,8 +21,10 @@ public class Hiro extends Actor
            //setLocation(0,getY());
         gerak();
         shootLayer();
+        setpoint();
+        kenatembak();
     }
-    public void gerak()
+    private void gerak()
     {
         if(Greenfoot.isKeyDown("w"))
         setLocation(getX(),getY()-2);
@@ -36,8 +38,8 @@ public class Hiro extends Actor
         if(Greenfoot.isKeyDown("a"))
         setLocation(getX()-5,getY());
     }
-     int laserTimer = 0;
-     public void shootLayer(){
+    private int laserTimer = 0;
+     private void shootLayer(){
          if(laserTimer == 30){
              getWorld(). addObject(new Laser(),getX()+10,getY());
               laserTimer = 0;
@@ -47,4 +49,23 @@ public class Hiro extends Actor
             }
      }
      
+     private  void setpoint(){
+         if (isTouching(Alien.class))
+        {
+        getWorld().addObject(new Boom(),getX(),getY());
+        setLocation(112,147);
+           
+              //removeTouching(Alien.class);
+     }
+    }
+    
+         public void kenatembak(){
+         if (isTouching(Laser2.class))
+        {
+        getWorld().addObject(new Boom(),getX(),getY());
+        setLocation(112,147);
+           
+              //removeTouching(Alien.class);
+     }
+    }
 }
